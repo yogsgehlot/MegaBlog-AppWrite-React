@@ -1,6 +1,5 @@
-import React from 'react'
-import { Login as loginComponent } from '../components'
-
+import React from "react";
+import { Login as loginComponent } from "../components";
 function Login() {
   return (
     <div className="py-8">
@@ -9,4 +8,4 @@ function Login() {
   );
 }
 
-export default Login
+export default Login;
