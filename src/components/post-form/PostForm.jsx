@@ -114,7 +114,7 @@ export default function PostForm({ post }) {
         <Input
           label="Featured Image :"
           type="file"
-          className="mb-4 opacity-100  bg-slate-800"
+          className="mb-4  opacity-100  bg-slate-800"
           accept="image/png, image/jpg, image/jpeg, image/gif"
           {...register("image", { required: !post })}
         />
@@ -123,7 +123,7 @@ export default function PostForm({ post }) {
             <img
               src={appwriteService.getFilePreview(post.featuredImage)}
               alt={post.title}
-              className="rounded-lg w-5"
+              className="rounded-lg w-full"
             />
           </div>
         )}
