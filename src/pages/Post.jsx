@@ -33,12 +33,12 @@ export default function Post() {
   };
 
   return post ? (
-    <div className=" grid sm:grid-cols-12 gap-2 py-8 mt-5">
-      <div className=" flex justify-center flex-wrap sm:col-span-8 sm:row-span-1 h-10 ">
+    <div className=" grid sm:grid-cols-12 gap-2 py-8 mt-5 ">
+      <div className=" flex justify-center flex-wrap sm:col-span-8 sm:row-span-2  items-center h-20  rounded-xl ml-5  ">
         <h1 className=" text-2xl font-bold  ">{post.title}</h1>
       </div>
 
-      <div className=" sm:col-span-4 sm:row-span-6">
+      <div className=" sm:col-span-4 sm:row-span-6 ">
         <img
           src={appwriteService.getFilePreview(post.featuredImage)}
           alt={post.title}
@@ -46,14 +46,14 @@ export default function Post() {
         />
       </div>
 
-      <div className="flex justify-center flex-wrap sm:col-span-8 sm:row-span-6 max-h-1/2">
+      <div className="flex justify-center p-5 bg-green-800 bg-opacity-50 rounded-xl ml-5 flex-wrap sm:col-span-8 sm:row-span-6 max-h-1/2">
         {parse(post.content)}
       </div>
 
       <div className="sm:col-span-8 sm:row-span-10 ">
         <Container>
           <div className=" flex justify-center relative rounded-xl ">
-            {console.log("from post",isAuthor)}
+            {console.log("from post", isAuthor)}
             {isAuthor && (
               <div className="flex justify-center  w-full">
                 <Link to={`/edit-post/${post.$id}`}>
