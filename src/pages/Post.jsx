@@ -33,33 +33,41 @@ export default function Post() {
   };
 
   return post ? (
-    <div className="py-8">
-      <Container>
-        <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
-          <img
-            src={appwriteService.getFilePreview(post.featuredImage)}
-            alt={post.title}
-            className="rounded-xl"
-          />
+    <div className=" grid sm:grid-cols-12 gap-2 py-8 mt-5">
+      <div className=" flex justify-center flex-wrap sm:col-span-8 sm:row-span-1 h-10 ">
+        <h1 className=" text-2xl font-bold  ">{post.title}</h1>
+      </div>
 
-          {isAuthor && (
-            <div className="absolute right-6 top-6">
-              <Link to={`/edit-post/${post.$id}`}>
-                <Button bgColor="bg-green-500" className="mr-3">
-                  Edit
+      <div className=" sm:col-span-4 sm:row-span-6">
+        <img
+          src={appwriteService.getFilePreview(post.featuredImage)}
+          alt={post.title}
+          className="rounded-xl"
+        />
+      </div>
+
+      <div className="flex justify-center flex-wrap sm:col-span-8 sm:row-span-6 max-h-1/2">
+        {parse(post.content)}
+      </div>
+
+      <div className="sm:col-span-8 sm:row-span-1  ">
+        <Container>
+          <div className=" flex justify-center relative rounded-xl ">
+            {isAuthor && (
+              <div className="flex justify-center  w-full">
+                <Link to={`/edit-post/${post.$id}`}>
+                  <Button bgColor="bg-green-500" className="mr-3">
+                    Edit
+                  </Button>
+                </Link>
+                <Button bgColor="bg-red-500" onClick={deletePost}>
+                  Delete
                 </Button>
-              </Link>
-              <Button bgColor="bg-red-500" onClick={deletePost}>
-                Delete
-              </Button>
-            </div>
-          )}
-        </div>
-        <div className="w-full mb-6">
-          <h1 className="text-2xl font-bold">{post.title}</h1>
-        </div>
-        <div className="browser-css">{parse(post.content)}</div>
-      </Container>
+              </div>
+            )}
+          </div>
+        </Container>
+      </div>
     </div>
   ) : null;
 }

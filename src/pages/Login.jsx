@@ -1,9 +1,11 @@
 import React from "react";
-import { Login as loginComponent } from "../components";
+import { Login as SignupComponent } from "../components";
+import { bgStyle } from "../constant.js";
+
 function Login() {
   return (
-    <div className="py-8">
-      <loginComponent />
+    <div >
+      <SignupComponent />
     </div>
   );
 }

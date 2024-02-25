@@ -1,18 +1,19 @@
-import React,{useId} from "react";
+import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
-import { Controller } from "react-hook-form";
+import { Controller } from "react-hook-form"; //it is used to control uncontrlled components, an alternative of hooks
 
 export default function RTE({ name, control, label, defaultValue = "" }) {
   return (
-    <div className="w-full">
-      {label && <label className="inline-block mb-1 pl-1">{label}</label>}
+    <div className="w-full bg-slate-800 rounded-xl">
+      {label && <label className="inline-block mb-1 pl-1 ">{label}</label>}
 
       <Controller
         name={name || "content"}
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
-          // apiKey={useId()}
+          
+            apiKey="pcc50prevnyuk3jx9ablokcmoe8qgikkiy8sz0snlq0tzn4y" // Add your API key here
             initialValue={defaultValue}
             init={{
               initialValue: defaultValue,

@@ -16,6 +16,7 @@ export default function PostForm({ post }) {
       },
     });
 
+  console.log("postform se hu", post);
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
 
@@ -43,9 +44,12 @@ export default function PostForm({ post }) {
       if (file) {
         const fileId = file.$id;
         data.featuredImage = fileId;
+        const userId = userData ? userData.$id : null; // Accessing userData safely'
+        console.log("post form :", data);
         const dbPost = await appwriteService.createPost({
           ...data,
-          userId: userData.$id,
+          
+          userId,
         });
 
         if (dbPost) {
@@ -77,18 +81,21 @@ export default function PostForm({ post }) {
   }, [watch, slugTransform, setValue]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-      <div className="w-2/3 px-2">
+    <form
+      onSubmit={handleSubmit(submit)}
+      className="flex flex-wrap rounded-xl bg-opacity-20"
+    >
+      <div className="w-2/3 px-2 text-stone-100">
         <Input
           label="Title :"
           placeholder="Title"
-          className="mb-4"
+          className="mb-4 opacity-60  bg-slate-800"
           {...register("title", { required: true })}
         />
         <Input
           label="Slug :"
           placeholder="Slug"
-          className="mb-4"
+          className="mb-4 opacity-60  bg-slate-800"
           {...register("slug", { required: true })}
           onInput={(e) => {
             setValue("slug", slugTransform(e.currentTarget.value), {
@@ -103,27 +110,27 @@ export default function PostForm({ post }) {
           defaultValue={getValues("content")}
         />
       </div>
-      <div className="w-1/3 px-2">
+      <div className="w-1/3 px-2 text-white text-2xl">
         <Input
           label="Featured Image :"
           type="file"
-          className="mb-4"
+          className="mb-4 opacity-100  bg-slate-800"
           accept="image/png, image/jpg, image/jpeg, image/gif"
           {...register("image", { required: !post })}
         />
         {post && (
-          <div className="w-full mb-4">
+          <div className="w-full mb-4 rounded-md">
             <img
               src={appwriteService.getFilePreview(post.featuredImage)}
               alt={post.title}
-              className="rounded-lg"
+              className="rounded-lg w-5"
             />
           </div>
         )}
         <Select
           options={["active", "inactive"]}
           label="Status"
-          className="mb-4"
+          className="mb-4 opacity-60  bg-slate-800 text-2xl "
           {...register("status", { required: true })}
         />
         <Button
