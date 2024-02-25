@@ -21,7 +21,7 @@ function App() {
         }
       })
       .finally(() => setLoading(false));
-  }, [loading]);
+  }, []);
 
   return loading ? null : (
     <div className="min-h-screen flex flex-wrap justify-center content-between border-spacing-5 ">

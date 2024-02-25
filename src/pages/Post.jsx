@@ -50,9 +50,10 @@ export default function Post() {
         {parse(post.content)}
       </div>
 
-      <div className="sm:col-span-8 sm:row-span-1  ">
+      <div className="sm:col-span-8 sm:row-span-10 ">
         <Container>
           <div className=" flex justify-center relative rounded-xl ">
+            {console.log("from post",isAuthor)}
             {isAuthor && (
               <div className="flex justify-center  w-full">
                 <Link to={`/edit-post/${post.$id}`}>
