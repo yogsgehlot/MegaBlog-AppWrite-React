@@ -48,7 +48,6 @@ export default function PostForm({ post }) {
         console.log("post form :", data);
         const dbPost = await appwriteService.createPost({
           ...data,
-          
           userId,
         });
 
