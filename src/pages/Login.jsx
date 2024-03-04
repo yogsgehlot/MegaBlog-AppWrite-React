@@ -4,9 +4,7 @@ import { bgStyle } from "../constant.js";
 
 function Login() {
   return (
-    <div >
       <SignupComponent />
-    </div>
   );
 }
 

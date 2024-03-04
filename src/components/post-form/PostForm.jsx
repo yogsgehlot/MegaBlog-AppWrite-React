@@ -82,7 +82,7 @@ export default function PostForm({ post }) {
   return (
     <form
       onSubmit={handleSubmit(submit)}
-      className="flex flex-wrap rounded-xl bg-opacity-20"
+      className="flex flex-wrap rounded-xl bg-opacity-20 w-full"
     >
       <div className="w-2/3 px-2 text-stone-100">
         <Input

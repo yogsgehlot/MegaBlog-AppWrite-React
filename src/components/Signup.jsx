@@ -5,6 +5,7 @@ import { login } from "../store/authSlice";
 import { Button, Input, Logo } from "./index.js";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
+import { bgStyle } from "../constant.js";
 
 function Signup() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className={`flex items-center justify-center w-full h-screen ${bgStyle}`}>
       <div
         className={`mx-auto w-full max-w-lg bg-opacity-50 bg-gray-900 rounded-xl p-10 border border-black/10`}
       >

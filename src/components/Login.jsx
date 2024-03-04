@@ -28,9 +28,7 @@ function Login() {
   };
 
   return (
-    <div>
-
-    <div className={`flex py-8 items-center justify-center ${bgStyle}`}>
+    <div className={`flex py-8 items-center justify-center ${bgStyle} w-full h-screen`}>
       <div
         className={` mx-auto w-full max-w-lg bg-opacity-50 bg-gray-900 rounded-xl p-10 border border-black/10`}
       >
@@ -40,7 +38,7 @@ function Login() {
           </span>
         </div>
         <h2 className="text-center text-cyan-200 text-2xl font-bold leading-tight">
-          Sign in to your account
+          Log in to your account
         </h2>
         <p className="mt-2 text-center  text-cyan-200 text-base text-black/60">
           Don&apos;t have any account?&nbsp;
@@ -78,13 +76,12 @@ function Login() {
               })}
             />
             <Button type="submit" className="w-full">
-              Sign in
+              Log in
             </Button>
           </div>
         </form>
       </div>
     </div>
-              </div>
   );
 }
 

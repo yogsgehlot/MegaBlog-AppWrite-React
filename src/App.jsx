@@ -25,19 +25,13 @@ function App() {
 
   return loading ? null : (
     <div className="min-h-screen flex flex-wrap justify-center content-between border-spacing-5 ">
-      <div className="w-full">
-        <Header />
-      </div>
-      <div className="w-full">
-        <main className="w-full  bg-white ">
-          <Outlet />
-        </main>
-      </div>
-      <div className="w-full mb-0">
-        <Footer />
-      </div>
+      <Header />
+
+      <Outlet />
+
+      <Footer />
     </div>
-  ) ;
+  );
 }
 
 export default App;

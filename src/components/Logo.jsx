@@ -5,7 +5,7 @@ function Logo({width="10px"}) {
    <div className="flex gap-4 justify-center">
 
    <img className={`w-10 rounded-xl`} src="/logo.png"></img>
-    <span className="m-auto text-2xl">BlogBook</span>
+    <span className="m-auto text-2xl text-blue-200 font-bold">BlogBook</span>
    </div>
   );
 }

@@ -37,7 +37,7 @@ function Header() {
   ];
 
   return (
-    <header className=" text-sm font-medium text-center text-gray-700 border-gray-200 dark:text-gray-400 dark:border-gray-700 ">
+    <header className=" w-full text-sm font-medium text-center text-gray-700 border-gray-200 dark:text-gray-400 dark:border-gray-700 ">
       <nav className="flex justify-around w-full dark:bg-gray-900">
         <div className="inline-block  m-2">
           <Link to="/">
