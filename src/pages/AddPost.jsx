@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, PostForm } from "../components";
+import {bgStyle3 } from "../constant";
 
 function AddPost() {
   return (
-    <div className="py-8  bg-[url('././public/old-painted-textured-surface-backdrop.jpg')] bg-cover">
+    <div className={`py-8 w-full bg-${bgStyle3}` }>
       <Container>
         <PostForm />
       </Container>
