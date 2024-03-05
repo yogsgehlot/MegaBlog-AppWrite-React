@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function PostCard({ $id, title, featuredImage }) {
   return (
     <Link to={`/post/${$id}`}>
-      <div className="w-full bg-slate-900 text-white bg-opacity-70 m-4 rounded-xl p-4">
+      <div className="w-full bg-slate-900 text-white bg-opacity-70 m-4 rounded-xl  p-4 ">
         <div className="w-full justify-center mb-4">
           <img
             src={appwriteService.getFilePreview(featuredImage)}
@@ -13,7 +13,9 @@ function PostCard({ $id, title, featuredImage }) {
             className="rounded-xl"
           />
         </div>
-        <h2 className="text-xl font-bold">{title}</h2>
+        <div>
+        <h2 className="sm:text-xl font-bold">{title}</h2>
+        </div>
       </div>
     </Link>
   );
