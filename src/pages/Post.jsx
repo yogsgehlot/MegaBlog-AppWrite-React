@@ -38,7 +38,7 @@ export default function Post() {
         <h1 className=" text-2xl font-bold  ">{post.title}</h1>
       </div>
 
-      <div className=" sm:col-span-4 sm:row-span-6 ">
+      <div className=" sm:col-span-4 m-3 sm:row-span-6 ">
         <img
           src={appwriteService.getFilePreview(post.featuredImage)}
           alt={post.title}
@@ -46,7 +46,7 @@ export default function Post() {
         />
       </div>
 
-      <div className="flex justify-center p-5 bg-green-800 bg-opacity-50 rounded-xl ml-5 flex-wrap sm:col-span-8 sm:row-span-6 max-h-1/2">
+      <div className="flex justify-center p-5 m-3 bg-blue-500 bg-opacity-50 rounded-xl flex-wrap sm:col-span-8 sm:row-span-6 max-h-1/2">
         {parse(post.content)}
       </div>
 
