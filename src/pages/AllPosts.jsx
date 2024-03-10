@@ -15,7 +15,7 @@ function AllPosts() {
   }, [  ]);
 
   return (
-    <div className={`w-full min-h-1/2 sm:h-screen py-8 dark:bg-gray-900 ${bgStyle2}`}>
+    <div className={`w-full min-h-1 sm:h-screen py-8 dark:bg-gray-900 ${bgStyle2}`}>
       <Container>
         <div className="grid sm:flex sm:flex-wrap grid-cols-1  ">
           {posts.map((post) => (
