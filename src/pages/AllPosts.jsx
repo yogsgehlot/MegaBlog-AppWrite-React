@@ -15,11 +15,11 @@ function AllPosts() {
   }, [  ]);
 
   return (
-    <div className={`w-full h-screen py-8 dark:bg-gray-900 ${bgStyle2}`}>
+    <div className={`w-full min-h-1/2 py-8 dark:bg-gray-900 ${bgStyle2}`}>
       <Container>
-        <div className="flex flex-wrap ">
+        <div className="grid sm:flex sm:flex-wrap grid-cols-1  ">
           {posts.map((post) => (
-            <div key={post.$id} className="p-2 w-1/4 h-1/4">
+            <div key={post.$id} className="p-2 sm:w-1/4 ">
               <PostCard {...post} />
             </div>
           ))}

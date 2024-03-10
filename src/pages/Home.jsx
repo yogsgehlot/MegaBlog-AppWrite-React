@@ -18,7 +18,7 @@ function Home() {
 
   if (posts.length === 0) {
     return (
-      <section className={`${bgStyle} bg-gray-700 bg-blend-multiply w-full`}>
+      <section className={`${bgStyle} bg-gray-700 bg-blend-multiply w-full h-screen`}>
         <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
             BlogBook
@@ -61,11 +61,11 @@ function Home() {
     );
   }
   return (
-    <div className={`${bgStyle} w-full dark:bg-gray-700 py-8 h-screen`}>
+    <div className={`${bgStyle} w-full dark:bg-gray-700 py-8 min-h-1/2`}>
       <Container>
-        <div className="flex flex-wrap ">
+        <div className="grid sm:flex sm:flex-wrap grid-cols-1 ">
           {posts.map((post) => (
-            <div key={post.$id} className="p-2 w-1/4">
+            <div key={post.$id} className="p-2  sm:w-1/4">
               <PostCard {...post} />
             </div>
           ))}
