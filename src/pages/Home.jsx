@@ -61,7 +61,7 @@ function Home() {
     );
   }
   return (
-    <div className={`${bgStyle} w-full dark:bg-gray-700 py-8 min-h-1/2`}>
+    <div className={`${bgStyle} w-full dark:bg-gray-700 py-8 sm:h-screen min-h-1/2`}>
       <Container>
         <div className="grid sm:flex sm:flex-wrap grid-cols-1 ">
           {posts.map((post) => (
