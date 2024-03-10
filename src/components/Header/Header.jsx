@@ -38,13 +38,13 @@ function Header() {
 
   return (
     <header className=" w-full text-sm font-medium text-center text-gray-700 border-gray-200 dark:text-gray-400 dark:border-gray-700 ">
-      <nav className="flex justify-around w-full dark:bg-gray-900">
-        <div className="inline-block  m-2">
+      <nav className="sm:flex justify-around w-full dark:bg-gray-900 grid sm:grid-cols-12">
+        <div className="inline-block col-span-2 m-2">
           <Link to="/">
             <Logo />
           </Link>
         </div>
-        <div className="inline-block">
+        <div className="inline-block col-span-10">
           <ul className="flex flex-wrap -mb-px">
             {navItems.map((item) =>
               item.active ? (
